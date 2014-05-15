@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <int name="Number of Rates">4</int>
+    <int name="Rate0">5</int>
+    <int name="Rate1">6</int>
+    <int name="Rate2">7</int>
+    <int name="Rate3">8</int>
+</config>
