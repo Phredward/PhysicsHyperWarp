@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using KSP.IO;
 
 
 [KSPAddon(KSPAddon.Startup.Flight, false)]
@@ -9,19 +10,24 @@ public class PhysicsHyperWarp : MonoBehaviour
 
 	public void Start() 
 	{
+		int number_of_rates, last_rate=5;
+		PluginConfiguration config = PluginConfiguration.CreateForType<PhysicsHyperWarp>();
+
 		print ("hey I'm starting");
 		TimeWarp t = TimeWarp.fetch;
 		for(int i = 0; i < t.physicsWarpRates.Length; i++) {
 			print (t.physicsWarpRates[i]);
 		}
-		Single[] finalArray = new Single[ t.physicsWarpRates.Length + 4 ];
+		config.load();
+		number_of_rates = config.GetValue<int>("Number of Rates", 4);
+		Single[] finalArray = new Single [t.physicsWarpRates.Length + number_of_rates];
 		for(int i = 0; i < t.physicsWarpRates.Length; i++) {
 			finalArray[i] = t.physicsWarpRates[i];
 		}
-		finalArray[4] = 5;
-		finalArray[5] = 6;
-		finalArray[6] = 7;
-		finalArray[7] = 8;
+		for (int i = 0; i < number_of_rates; i++) {
+			last_rate = config.GetValue<int>("Rate"+i, last_rate + 1);
+			finalArray[t.physicsWarpRates.Length + i] = last_rate;
+		}
 		t.physicsWarpRates = finalArray;
 
 		print ("hey mission complete");
