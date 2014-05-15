@@ -13,7 +13,6 @@ public class PhysicsHyperWarp : MonoBehaviour
 		int number_of_rates, last_rate=5;
 		PluginConfiguration config = PluginConfiguration.CreateForType<PhysicsHyperWarp>();
 
-		print ("hey I'm starting");
 		TimeWarp t = TimeWarp.fetch;
 		for(int i = 0; i < t.physicsWarpRates.Length; i++) {
 			print (t.physicsWarpRates[i]);
@@ -29,8 +28,6 @@ public class PhysicsHyperWarp : MonoBehaviour
 			finalArray[t.physicsWarpRates.Length + i] = last_rate;
 		}
 		t.physicsWarpRates = finalArray;
-
-		print ("hey mission complete");
 	}
 
 }
