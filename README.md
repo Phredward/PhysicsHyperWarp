@@ -7,7 +7,9 @@ Have you ever been playing KSP and realized you wanted physics warp speeds > 4x?
 Usage
 -----
 
-Just copy PhysicsHyperWarp.dll into your Gamedata directory.  When choosing a physics warp speed, keep going up above 4x!
+Just unzip PhysicsHyperWarp.zip into your Gamedata directory.  When choosing a physics warp speed, keep going up above 4x!
+
+If you want to experiment with very high physics warp rates, I recommend turning on flight debug stats and making sure your computer can keep up with the desired rate.  Up to 16x works solidly for me.  Make sure to disable all engines (including RCS) when doing so.
 
 
 ChangeLog
@@ -16,6 +18,9 @@ ChangeLog
 v1.0
 - Support 5, 6, 7, and 8x
 - Physics Warp Indicator will be blank above 4x.
+
+Known Issues:
+The warp indicator goes blank above 4x
 
 
 This software is copyright 2014 Fred Blau
